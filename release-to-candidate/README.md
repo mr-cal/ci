@@ -37,6 +37,16 @@ jobs:
 | `snapcraft-channel`      | The channel to install Snapcraft from.                                                    |    N     | `latest/stable`            |
 | `store-token`            | A token with permissions to upload and release to the specified channel in the Snap Store |    Y     |                            |
 
+#### Launchpad token
+
+To generate the `launchpad-token`, run `snapcraft remote-build` locally and export the credentials with:
+
+```bash
+awk '{printf "%s\\n", $0}' ~/.local/share/snapcraft/launchpad-credentials
+```
+
+For Snapcraft versions 8.2.0 and earlier, the credentials are stored as `~/.local/share/snapcraft/provider/launchpad/credentials`.
+
 ### Outputs
 
 | Key        | Description                               | Example |
